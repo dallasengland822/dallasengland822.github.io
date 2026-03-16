@@ -43,7 +43,7 @@ body {
   display: block;
   box-sizing: border-box;
   background: #ffffff;
-  padding: 28px;
+  padding: 40px;
   border: 2px solid #111;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
