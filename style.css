@@ -69,3 +69,10 @@ body {
   line-height: 1.6;
   font-size: 0.98rem;
 }
+.photo-card a {
+  display: block;
+}
+
+.photo-card a:hover img {
+  opacity: 0.95;
+}
