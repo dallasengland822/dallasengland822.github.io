@@ -1,95 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dallas England Photography</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dallas England Photography</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <h1>Dallas England Photography</h1>
-    <p class="intro">
-      Landscapes, light, form, and shadow.
-    </p>
-  </header>
 
-  <main class="gallery">
+<header class="site-header">
+<h1>Dallas England Photography</h1>
+<p class="intro">Landscapes, light, form, and shadow.</p>
+</header>
 
-  <figure class="photo-card">
-  <a href="images/photo1.jpg" target="_blank">
-    <img src="images/photo1.jpg" alt="Landscape photograph 1">
-  </a>
-  <figcaption>
-    <h2>Evening Form</h2>
-    <p class="meta">South Thompson Valley, BC</p>
-    <p>
-      I waited for the low sun to bring out the curves in the hillside and let the shadow define the form.
-    </p>
-  </figcaption>
+<main class="gallery">
+
+<figure class="photo-card">
+<img src="images/photo1.jpg" alt="Landscape photograph 1">
+<figcaption>
+<h2>Evening Form</h2>
+<p class="meta">South Thompson Valley, BC</p>
+<p>
+I waited for the low sun to bring out the curves in the hillside and let the shadow define the form.
+</p>
+</figcaption>
 </figure>
 
 <figure class="photo-card">
-  <a href="images/photo2.jpg" target="_blank">
-    <img src="images/photo2.jpg" alt="Landscape photograph 2">
-  </a>
-  <figcaption>
-    <h2>Winter Light</h2>
-    <p class="meta">Kamloops Area, BC</p>
-    <p>
-      This scene interested me because the light simplified the land into shape, tone, and edge.
-    </p>
-  </figcaption>
+<img src="images/photo2.jpg" alt="Landscape photograph 2">
+<figcaption>
+<h2>Winter Light</h2>
+<p class="meta">Kamloops Area, BC</p>
+<p>
+This scene interested me because the light simplified the land into shape, tone, and edge.
+</p>
+</figcaption>
 </figure>
 
 <figure class="photo-card">
-  <a href="images/photo3.JPG" target="_blank">
-    <img src="images/photo3.JPG" alt="Landscape photograph 3">
-  </a>
-  <figcaption>
-    <h2>Water and Light</h2>
-    <p class="meta">British Columbia</p>
-    <p>
-      The reflected light across the water created the structure of the image.
-    </p>
-  </figcaption>
+<img src="images/photo3.JPG" alt="Landscape photograph 3">
+<figcaption>
+<h2>Water and Light</h2>
+<p class="meta">British Columbia</p>
+<p>
+The reflected light across the water created the structure of the image.
+</p>
+</figcaption>
 </figure>
 
 <figure class="photo-card">
-  <a href="images/photo4.jpg" target="_blank">
-    <img src="images/photo4.jpg" alt="Landscape photograph 4">
-  </a>
-  <figcaption>
-    <h2>Glacial Trace</h2>
-    <p class="meta">South Thompson Valley, BC</p>
-    <p>
-      Subtle ridges in the land hint at the glacial forces that shaped this valley.
-    </p>
-  </figcaption>
+<img src="images/photo4.jpg" alt="Landscape photograph 4">
+<figcaption>
+<h2>Glacial Trace</h2>
+<p class="meta">South Thompson Valley, BC</p>
+<p>
+Subtle ridges in the land hint at the glacial forces that shaped this valley.
+</p>
+</figcaption>
 </figure>
+
 </main>
 
 <div id="lightbox">
-  <span id="close">&times;</span>
-  <img id="lightbox-img">
+<span id="close">&times;</span>
+<img id="lightbox-img">
 </div>
 
 <script>
+
 const images = document.querySelectorAll(".photo-card img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const close = document.getElementById("close");
 
 images.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-  });
+img.addEventListener("click", () => {
+lightbox.style.display = "flex";
+lightboxImg.src = img.src;
+});
 });
 
 close.onclick = () => {
-  lightbox.style.display = "none";
+lightbox.style.display = "none";
 };
+
+lightbox.onclick = (e) => {
+if(e.target !== lightboxImg){
+lightbox.style.display = "none";
+}
+};
+
 </script>
 
 </body>
