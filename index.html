@@ -132,34 +132,76 @@ Made from sediment in paleo-glacial Lake Thompson
   </main>
 
   <div id="lightbox">
-    <span id="close">&times;</span>
-    <img id="lightbox-img" src="" alt="Expanded photograph">
-  </div>
+  <button id="prev-btn" class="lightbox-nav">&#10094;</button>
+  <img id="lightbox-img">
+  <button id="next-btn" class="lightbox-nav">&#10095;</button>
+  <span id="close">&times;</span>
+</div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const images = document.querySelectorAll(".photo-card img");
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.getElementById("close");
+document.addEventListener("DOMContentLoaded", function () {
 
-      images.forEach(function (img) {
-        img.addEventListener("click", function () {
-          lightboxImg.src = img.src;
-          lightbox.style.display = "flex";
-        });
-      });
+  const images = document.querySelectorAll(".photo-card img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.getElementById("close");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
 
-      closeBtn.addEventListener("click", function () {
-        lightbox.style.display = "none";
-      });
+  let currentIndex = 0;
 
-      lightbox.addEventListener("click", function (e) {
-        if (e.target !== lightboxImg) {
-          lightbox.style.display = "none";
-        }
-      });
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightbox.style.display = "flex";
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  images.forEach(function (img, index) {
+    img.addEventListener("click", function () {
+      openLightbox(index);
     });
+  });
+
+  nextBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    showNext();
+  });
+
+  prevBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    showPrev();
+  });
+
+  closeBtn.addEventListener("click", function () {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "Escape") lightbox.style.display = "none";
+    }
+  });
+
+});
+</script>
   </script>
 <footer class="footer">
   © Dallas England — All images are copyrighted and may not be reproduced without permission.
