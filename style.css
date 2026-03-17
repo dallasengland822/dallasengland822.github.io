@@ -110,3 +110,21 @@ body {
   font-size: 0.85rem;
   color: #666;
 }
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: none;
+  font-size: 42px;
+  cursor: pointer;
+  padding: 12px 18px;
+}
+
+#prev-btn { left: 20px; }
+#next-btn { right: 20px; }
+
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.25);
+}
