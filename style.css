@@ -104,3 +104,9 @@ body {
   cursor: pointer;
   line-height: 1;
 }
+.footer {
+  text-align: center;
+  padding: 30px 20px 40px;
+  font-size: 0.85rem;
+  color: #666;
+}
