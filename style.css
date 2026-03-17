@@ -128,3 +128,17 @@ body {
 .lightbox-nav:hover {
   background: rgba(255,255,255,0.25);
 }
+.top-nav {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.top-nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #222;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
