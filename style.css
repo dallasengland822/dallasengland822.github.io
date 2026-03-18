@@ -131,6 +131,8 @@ body {
 .top-nav {
   text-align: center;
   padding: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
 }
 
 .top-nav a {
